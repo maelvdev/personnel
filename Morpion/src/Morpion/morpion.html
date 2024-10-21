@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morpous</title>
+    <link rel="stylesheet" href="styleMorpion.css">
+</head>
+<body>
+    <h1>Jeu du Morpous</h1>
+    
+    <div class="player-inputs">
+        <label for="player1">Nom du Joueur 1 :</label>
+        <input type="text" id="player1" placeholder="Joueur 1">
+        <br>
+        <label for="player2">Nom du Joueur 2 :</label>
+        <input type="text" id="player2" placeholder="Joueur 2">
+        <br>
+
+        <label>Choisissez votre icône :</label>
+        <div id="icon-selection" class="icon-selection">
+            <img src="../images/icon1.png" alt="Icône 1" class="icon" data-icon="../images/icon1.png">
+            <img src="../images/icon2.png" alt="Icône 2" class="icon" data-icon="../images/icon2.png">
+            <img src="../images/icon3.png" alt="Icône 3" class="icon" data-icon="../images/icon3.png">
+            <img src="../images/icon4.png" alt="Icône 4" class="icon" data-icon="../images/icon4.png">
+        </div>
+        <br>
+        <p id="instruction">Joueur 1, choisissez votre icône</p>
+        <button id="start-game" style="display: none;">Commencer la partie</button>
+    </div>
+
+    <div class="game-container" style="display: none;">
+        <div class="game-board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <div class="game-status">
+            <p id="status-message"></p>
+            <button id="reset-button">Réinitialiser le jeu</button>
+        </div>
+    </div>
+
+    <script src="scriptMorpion.js"></script>
+</body>
+</html>
