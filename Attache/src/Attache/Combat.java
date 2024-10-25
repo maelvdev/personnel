@@ -19,7 +19,7 @@ public class Combat
 
 		while ( !estFini )
 		{
-			if (monMonstre.getNbHealth()<=0)
+			if (monMonstre.getNbHealth()<=0 || monJoueur.getNbHealth() <= 0)
 			{
 				estFini = true;
 			}
@@ -44,7 +44,9 @@ public class Combat
 			
 
 		}
-		this.messageMort();
+		if (monJoueur.getNbHealth() > 0)
+			this.messageMort();
+
 		this.monJoueur.resetStat();
 	}
 

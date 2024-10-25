@@ -24,21 +24,28 @@ public class Attache
 	{
 		Attache latache = new Attache("Nouch");
 
-		while (!latache.getVictoire() && latache.getJoueur().getNbHealth() > 0)
+		while (!latache.getVictoire() )
 		{
 
 			System.out.println(latache);
 			
-			while(latache.getNumEtage()!=3 || latache.getNumSalle() !=5)
+			while( ( latache.getNumEtage()!=3 || latache.getNumSalle() !=5 ) && latache.getJoueur().getNbHealth() > 0)
 			{
 				new Combat(latache.getJoueur(), (int) (Math.random() * 5) + 1);
 				latache.nouvelleSalle();
 			}
 
 			Attache.setVictoire(true);
+			
 		}
-
-		System.out.println("Vous avez gagné, félicitation !");
+		if ( latache.getJoueur().getNbHealth() > 0 )
+		{
+			System.out.println("Vous avez gagné, félicitation !");
+		}	
+		else
+		{
+			System.out.println("Vous-avez perdu. Mais la prochaine peut être la bonne !");
+		}
 	}
 
 
